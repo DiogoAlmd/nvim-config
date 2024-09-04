@@ -1,4 +1,3 @@
--- settings.lua
 
 -- Números relativos
 vim.wo.number = true
