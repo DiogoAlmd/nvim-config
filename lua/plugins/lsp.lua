@@ -9,10 +9,10 @@ return {
       -- Habilitar as capacidades do LSP para autocompletar
       local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-      -- Configuração do tsserver
-      lspconfig.tsserver.setup({
+      -- Configuração do ts_ls (TypeScript e JavaScript)
+      lspconfig.ts_ls.setup({
         on_attach = function(client, bufnr)
-          -- Desabilitar formatação do tsserver (para usar o ESLint)
+          -- Desabilitar formatação do ts_ls (para usar o ESLint ou Prettier)
           client.server_capabilities.documentFormattingProvider = false
         end,
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx", "typescript.jsx" },  -- Suporte a React e React Native
@@ -30,7 +30,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "tsserver" },
+        ensure_installed = { "ts_ls" },  -- Substituir tsserver por ts_ls
       })
     end
   }
