@@ -1,12 +1,33 @@
+vim.opt.guicursor = ""
 
 -- Números relativos
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Auto-indentação
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undofile = true
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+
+vim.opt.timeoutlen = 1000
+vim.opt.updatetime = 50
 
 -- Salvar automaticamente ao sair do modo de inserção
 vim.cmd [[autocmd InsertLeave * silent! write]]
